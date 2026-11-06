@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "updated": "2026-11-06",
+  "note": "Windows 节点查看器远程源配置。改这里即可加新源/换地址，不用重新打包；软件每次刷新前先拉这份配置，拉不到时用内置默认值。",
+  "sources": [
+    {
+      "id": "cnc07",
+      "name": "cnc07 快捷加速器",
+      "type": "cnc07",
+      "api": "http://cnc07api.cnc07.com/api/cnc07apijm"
+    },
+    {
+      "id": "pawdroid",
+      "name": "Pawdroid",
+      "type": "subscription",
+      "url": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub"
+    },
+    {
+      "id": "end-gfw-free",
+      "name": "end-gfw-free",
+      "type": "subscription",
+      "url": "https://raw.githubusercontent.com/hello-world-1989/cn-news/main/end-gfw-free"
+    },
+    {
+      "id": "loon-clash",
+      "name": "loon-clash 聚合",
+      "type": "loon-clash",
+      "url": "https://cdn.jsdelivr.net/gh/SaberWu/loon-plugins@main/loon-clash/nodes.txt",
+      "fallback_url": "https://raw.githubusercontent.com/SaberWu/loon-plugins/main/loon-clash/nodes.txt"
+    }
+  ]
+}

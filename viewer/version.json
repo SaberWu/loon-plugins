@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",
+  "release_date": "2026-11-06",
+  "download_url": "https://github.com/SaberWu/loon-plugins/releases/download/viewer-v1.0.0/NodeViewer.exe",
+  "notes": "Windows 节点查看器首版：三路节点提取、分类筛选、后台测速、通用导出（Loon/base64/ss 列表/Clash YAML）。"
+}
