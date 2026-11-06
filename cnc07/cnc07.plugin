@@ -2,7 +2,7 @@
 #!desc=每 6 小时拉取快捷加速器节点源，解密后与上次比对；每次运行都发通知（首次、节点变化、无变化、拉取失败），点通知复制 Loon [Proxy] 格式节点，粘贴到配置 [Proxy] 段即可。节点本身不自动进代理列表（Loon 插件无 [Proxy] 模块，脚本 API 也无加节点接口）。
 #!author=红后
 #!system=ios
-#!version=1.0.2
+#!version=1.0.3
 
 [Script]
 cron "0 */6 * * *" script-path=https://cdn.jsdelivr.net/gh/SaberWu/loon-plugins@main/cnc07/cnc07.js, timeout=60, tag=cnc07 节点提醒
