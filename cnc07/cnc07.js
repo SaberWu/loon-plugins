@@ -1,6 +1,6 @@
 // cnc07 节点定时提醒（Loon cron 脚本，ES5 写法）
 // 每 6 小时拉取快捷加速器节点源，解密后与上次比对；
-// 首次拉取、节点有变化、拉取/解密失败时发通知，点通知复制 Loon [Proxy] 格式节点。
+// 每次运行都发通知（首次、节点变化、无变化、拉取失败），点通知复制 Loon [Proxy] 格式节点。
 // 节点本身不自动进代理列表（Loon 插件无 [Proxy] 模块，脚本 API 也无加节点接口）。
 // 来源：快捷指令「快捷加速器」（Telegram t.me/GieGie777 搬运）
 // 链路：GET http://cnc07api.cnc07.com/api/cnc07apijm
@@ -153,7 +153,7 @@ function handlePlain(plain) {
   } else if (added > 0 || removed > 0) {
     $notification.post("cnc07 节点提醒", "节点有变化", "共 " + lines.length + " 条，新增 " + added + "，失效 " + removed + "，点通知复制 Loon 格式节点", {clipboard: loonText});
   } else {
-    console.log("cnc07 无变化，共 " + lines.length + " 条");
+    $notification.post("cnc07 节点提醒", "无变化", "共 " + lines.length + " 条，点通知复制 Loon 格式节点", {clipboard: loonText});
   }
   $done();
 }
