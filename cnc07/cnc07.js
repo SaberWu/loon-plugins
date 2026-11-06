@@ -1,11 +1,11 @@
 // cnc07 节点定时提醒（Loon cron 脚本，ES5 写法）
 // 每 6 小时拉取快捷加速器节点源，解密后与上次比对；
-// 首次拉取、节点有变化、拉取/解密失败时发通知，点通知复制最新订阅。
+// 首次拉取、节点有变化、拉取/解密失败时发通知，点通知复制 Loon [Proxy] 格式节点。
 // 节点本身不自动进代理列表（Loon 插件无 [Proxy] 模块，脚本 API 也无加节点接口）。
 // 来源：快捷指令「快捷加速器」（Telegram t.me/GieGie777 搬运）
 // 链路：GET http://cnc07api.cnc07.com/api/cnc07apijm
 //       -> AES-128-CBC 解密（本机 $crypto，Build 988+；失败则走 ssleye 在线解密兜底）
-//       -> 解析 alias 里的 ss 节点 -> 拼 ss:// 订阅
+//       -> 解析 alias 里的 ss 节点 -> 拼 Loon [Proxy] 格式节点行
 
 var API = "http://cnc07api.cnc07.com/api/cnc07apijm";
 var DECRYPT_URL = "https://www.ssleye.com/ssltool/aes_decrypt_hander";
@@ -16,21 +16,6 @@ var SS_RE = /SS\s*=\s*ss,\s*([\d.]+),\s*(\d+),encrypt-method=([a-z0-9\-]+),passw
 
 // ---------- base64 / UTF-8（不依赖 atob/btoa 与 TextEncoder） ----------
 var B64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-
-function b64Encode(str) {
-  var bytes = utf8Encode(str);
-  var out = "";
-  var i;
-  for (i = 0; i < bytes.length; i += 3) {
-    var b0 = bytes[i], b1 = (i + 1 < bytes.length) ? bytes[i + 1] : 0;
-    var b2 = (i + 2 < bytes.length) ? bytes[i + 2] : 0;
-    out += B64.charAt(b0 >> 2);
-    out += B64.charAt(((b0 & 3) << 4) | (b1 >> 4));
-    out += (i + 1 < bytes.length) ? B64.charAt(((b1 & 15) << 2) | (b2 >> 6)) : "=";
-    out += (i + 2 < bytes.length) ? B64.charAt(b2 & 63) : "=";
-  }
-  return out;
-}
 
 function b64Decode(b64) {
   var clean = b64.replace(/[^A-Za-z0-9+\/=]/g, "");
@@ -149,11 +134,11 @@ function handlePlain(plain) {
     m = SS_RE.exec(items[i].alias || "");
     if (!m) continue;
     var name = "cnc07-" + (items[i].city_cn || items[i].country || "") + "-" + (items[i].code || "");
-    lines.push("ss://" + b64Encode(m[3] + ":" + m[4] + "@" + m[1] + ":" + m[2]) + "#" + encodeURIComponent(name));
+    lines.push(name + " = ss, " + m[1] + ", " + m[2] + ", encrypt-method=" + m[3] + ", password=" + m[4]);
     keys.push(m[1] + ":" + m[2]);
   }
   if (!lines.length) return fail("未解析出任何节点");
-  var sub = lines.join("\n");
+  var loonText = lines.join("\n");
   var prev = null;
   try {
     prev = JSON.parse($persistentStore.read(STORE_KEY) || "null");
@@ -164,9 +149,9 @@ function handlePlain(plain) {
   for (k = 0; k < prevKeys.length; k++) if (keys.indexOf(prevKeys[k]) < 0) removed++;
   $persistentStore.write(JSON.stringify({count: lines.length, keys: keys, time: Date.now()}), STORE_KEY);
   if (!prev) {
-    $notification.post("cnc07 节点提醒", "首次拉取成功", "共 " + lines.length + " 条节点，点通知复制订阅导入 Loon", {clipboard: sub});
+    $notification.post("cnc07 节点提醒", "首次拉取成功", "共 " + lines.length + " 条节点，点通知复制 Loon 格式节点，粘贴到配置 [Proxy] 段", {clipboard: loonText});
   } else if (added > 0 || removed > 0) {
-    $notification.post("cnc07 节点提醒", "节点有变化", "共 " + lines.length + " 条，新增 " + added + "，失效 " + removed + "，点通知复制最新订阅", {clipboard: sub});
+    $notification.post("cnc07 节点提醒", "节点有变化", "共 " + lines.length + " 条，新增 " + added + "，失效 " + removed + "，点通知复制 Loon 格式节点", {clipboard: loonText});
   } else {
     console.log("cnc07 无变化，共 " + lines.length + " 条");
   }
