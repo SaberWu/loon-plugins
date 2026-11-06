@@ -134,7 +134,7 @@ function handlePlain(plain) {
     m = SS_RE.exec(items[i].alias || "");
     if (!m) continue;
     var name = "cnc07-" + (items[i].city_cn || items[i].country || "") + "-" + (items[i].code || "");
-    lines.push(name + " = ss, " + m[1] + ", " + m[2] + ", encrypt-method=" + m[3] + ", password=" + m[4]);
+    lines.push(name + " = Shadowsocks, " + m[1] + ", " + m[2] + ", " + m[3] + ", \"" + m[4] + "\"");
     keys.push(m[1] + ":" + m[2]);
   }
   if (!lines.length) return fail("未解析出任何节点");
