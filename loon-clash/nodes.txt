@@ -1,38 +1,37 @@
 # Loon 订阅（免费节点聚合工具生成）
-# 生成时间：2026-11-10 02:47:16
-# 节点总数：256
+# 生成时间：2026-11-10 08:47:22
+# 节点总数：258
 # 测速分级：优(<200ms)/良(<500ms)/中(<1000ms)/差(>=1000ms)/不可达(TCP失败)/未测速(UDP协议或未测速)
 # 导入方式：Loon -> 配置 -> 订阅 -> 添加（粘贴本文件内容或 URL）
 # 仅含 vless/vmess/trojan/ss；UDP 协议节点 Loon 行写法不支持，已略过
 
 【未测速】DE VLESS-01 | free-nodes = vless,198.62.62.92,443,4deb5a68-24d4-4ad7-84b2-832ac1dc6328,encryption=none,tls=true,sni=FaSEYn-6441.wawawe.online,udp-relay=true
-【未测速】IT【机场推荐：https://a9a.xyz】6 = ss,202.50.253.45,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-【未测速】\U0001F1EE\U0001F1F9IT_2|1.3MB/s = ss,202.50.253.36,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-【未测速】\U0001F1EE\U0001F1F9IT_3|2.4MB/s = ss,202.50.253.90,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-【未测速】IT【机场推荐：https://a9a.xyz】9 = ss,202.50.253.27,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-【未测速】IT【机场推荐：https://a9a.xyz】2 = ss,202.50.253.63,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+【未测速】IT【机场推荐：https://a9a.xyz】7 = ss,202.50.253.45,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+【未测速】\U0001F1EE\U0001F1F9IT_3|1.2MB/s = ss,202.50.253.36,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+【未测速】\U0001F1EE\U0001F1F9IT_4|1.6MB/s = ss,202.50.253.90,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+【未测速】IT【机场推荐：https://a9a.xyz】4 = ss,202.50.253.27,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+【未测速】\U0001F1EE\U0001F1F9IT_1|3.1MB/s = ss,202.50.253.63,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
 【未测速】IT【机场推荐：https://a9a.xyz】5 = ss,202.50.253.54,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-【未测速】IT【机场推荐：https://a9a.xyz】7 = ss,202.50.253.72,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-【未测速】IT【机场推荐：https://a9a.xyz】1 = ss,202.50.253.99,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-【未测速】IT【机场推荐：https://a9a.xyz】10 = ss,202.50.253.81,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-【未测速】\U0001F1EE\U0001F1F9IT_1|1.2MB/s = ss,202.50.253.18,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+【未测速】IT【机场推荐：https://a9a.xyz】8 = ss,202.50.253.72,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+【未测速】IT【机场推荐：https://a9a.xyz】9 = ss,202.50.253.99,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+【未测速】IT【机场推荐：https://a9a.xyz】6 = ss,202.50.253.81,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+【未测速】\U0001F1EE\U0001F1F9IT_2|2.3MB/s = ss,202.50.253.18,19999,aes-256-gcm,ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
 【未测速】US VLESS-12 | free-nodes = vless,104.160.44.254,443,0a3432cd-74b8-413a-896d-f51492b030bc,encryption=none,tls=true,sni=portal.citygrainla.com,udp-relay=true
 【未测速】US VLESS-13 | free-nodes = vless,107.172.214.195,443,2af77824-f83d-4f50-9dd0-560bb6e7cd45,encryption=none,tls=true,sni=academy.nvidia.com,udp-relay=true
-【未测速】HK【机场推荐：https://a9a.xyz】11 = vless,152.175.6.229,31884,e9a8144e-5237-488a-afb1-9ca3d8d54c80,encryption=none,tls=true,sni=hk010.zestapp778.com,udp-relay=true
+【未测速】HK VLESS-14 | free-nodes = vless,152.175.6.229,31884,e9a8144e-5237-488a-afb1-9ca3d8d54c80,encryption=none,tls=true,sni=hk010.zestapp778.com,udp-relay=true
 【未测速】US VLESS-15 | free-nodes = vless,swedenafteraventura.space,443,50a87e21-f0e2-4b53-a787-91adfe748f63,encryption=none,tls=true,sni=swedenafteraventura.space,udp-relay=true
 【未测速】SG VLESS-16 | free-nodes = vless,43.163.112.174,443,0dedd47d-47b9-4ed1-9c9f-cbeecad57a68,encryption=none,tls=true,sni=www.cloudflare.com,udp-relay=true
-【未测速】俄罗斯+V2CROSS.COM = vless,76574ct.nl7.h1clayd.click,443,cda0862a-0f87-4be9-8ed8-1d0c9e382839,encryption=none,tls=true,sni=76574ct.nl7.h1clayd.click,udp-relay=true
-【未测速】美国+V2CROSS.COM = vless,167.233.25.137,443,7e92da20-d9da-4d78-a64c-d032bc998e54,encryption=none,tls=true,sni=www.microsoft.com,udp-relay=true
-【未测速】俄罗斯+V2CROSS.COM-2 = vless,15d7fft.nl11.h1clayd.click,443,b7b8ee80-db83-4276-8c68-87dc88b0b0b5,encryption=none,tls=true,sni=15d7fft.nl11.h1clayd.click,udp-relay=true
-【未测速】荷兰+V2CROSS.COM = vless,178.214.109.1,443,40a86b1b-239d-455e-b53f-4c270788ba6e,encryption=none,tls=true,sni=promo-digital.wb.ru,udp-relay=true
-【未测速】瑞典+V2CROSS.COM = trojan,167.88.61.175,443,0ab6c98dae3b48e8b9c4a776b6c9c19a,tls=true,sni=blog.browseseniorrolesandenhanceyourcareertoday.com,udp-relay=true
-【未测速】美国+V2CROSS.COM-2 = ss,154.36.158.197,8388,aes-256-gcm,BeaUf9c0AEWH40Pu
 【未测速】立陶宛+V2CROSS.COM = vless,app26.betust.net,443,2232d904-8e6a-4202-8240-6efd8aec02e9,encryption=none,tls=true,sni=app26.betust.net,udp-relay=true
-【未测速】伊拉克+V2CROSS.COM = vless,5.104.74.129,8443,27974bac-4f89-4c54-a403-0bc1e1a52919,encryption=none,tls=true,sni=uk-room05.filesnap.tech,udp-relay=true
-【未测速】PL【机场推荐：https://a9a.xyz】15 = vless,5.104.74.70,8443,6e10d4e1-1f93-461b-b1c6-90e56c053a11,encryption=none,tls=true,sni=uk-room07.filesnap.tech,udp-relay=true
+【未测速】罗马尼亚+V2CROSS.COM = vless,212.69.135.27,8443,688ece4d-84ee-4db7-bc61-85776df0a3b4,encryption=none,tls=true,sni=uk-room05.filesnap.tech,udp-relay=true
+【未测速】伊拉克+V2CROSS.COM = vless,5.104.74.27,8443,688ece4d-84ee-4db7-bc61-85776df0a3b4,encryption=none,tls=true,sni=uk-room07.filesnap.tech,udp-relay=true
+【未测速】巴西+V2CROSS.COM = vless,sundaylanzgem.site,443,50a87e21-f0e2-4b53-a787-91adfe748f63,encryption=none,tls=true,sni=sundaylanzgem.site,udp-relay=true
+【未测速】伊拉克+V2CROSS.COM-2 = vless,5.104.74.25,8443,c1f87d4d-3ea2-4378-925a-b4942e930a7d,encryption=none,tls=true,sni=uk-room07.filesnap.tech,udp-relay=true
 【未测速】瑞士+V2CROSS.COM = vless,at1.japancase.site,443,db80088c-32a1-4cb8-a907-0f3cb7844152,encryption=none,tls=true,sni=at1.japancase.site,udp-relay=true
-【未测速】瑞士+V2CROSS.COM-2 = vless,178.22.31.72,443,db80088c-32a1-4cb8-a907-0f3cb7844152,encryption=none,tls=true,sni=at1.japancase.site,udp-relay=true
-【未测速】🇺🇸_美国 (46) = vless,199.232.78.160,443,8fdeb819-df0c-456d-9a1d-e3a9950ece4d,encryption=none,tls=true,sni=cdn.akamai.steamstatic.com,ws=true,ws-path=/,ws-headers=host:copy_az_channel_NUFiLTER_ss.global.ssl.fastly.net.,udp-relay=true
+【未测速】伊拉克+V2CROSS.COM-3 = vless,5.104.74.26,8443,0083a0f5-4418-44c2-a9ec-6dce0c26fb94,encryption=none,tls=true,sni=uk-room07.filesnap.tech,udp-relay=true
+【未测速】瑞典+V2CROSS.COM = trojan,167.88.61.175,443,0ab6c98dae3b48e8b9c4a776b6c9c19a,tls=true,sni=blog.browseseniorrolesandenhanceyourcareertoday.com,udp-relay=true
+【未测速】美国+V2CROSS.COM = vless,167.233.25.137,443,7e92da20-d9da-4d78-a64c-d032bc998e54,encryption=none,tls=true,sni=www.microsoft.com,udp-relay=true
+【未测速】伊拉克+V2CROSS.COM-4 = vless,5.104.74.144,8443,a2c7856f-718d-47fc-980d-7ee15000225b,encryption=none,tls=true,sni=uk-room07.filesnap.tech,udp-relay=true
+【未测速】\U0001F1FA\U0001F1F8US_1|1.6MB/s = vless,199.232.78.160,443,64ce5faf-427b-4dd1-926c-6b7ced6b8c38,encryption=none,tls=true,sni=cdn.akamai.steamstatic.com,ws=true,ws-path=/?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET,ws-headers=host:copy_az_channel_NUFiLTER_10i.global.ssl.fastly.net.,udp-relay=true
 【未测速】🇺🇸_美国 (48) = trojan,167.82.64.7,443,MiTiVPN,tls=true,sni=cdn.akamai.steamstatic.com,udp-relay=true
 【未测速】🇺🇸_美国 (49) = trojan,146.75.57.7,443,MiTiVPN,tls=true,sni=cdn.akamai.steamstatic.com,udp-relay=true
 【未测速】🇺🇸_美国 (50) = trojan,162.159.140.116,2087,0d715769-33bb-47aa-8132-96d347e1f1ef,tls=true,sni=17941839736049.206352.xyz,ws=true,ws-path=/agraeabtegrrh,ws-headers=host:17941839738421.206352.xyz,udp-relay=true
@@ -101,7 +100,6 @@
 【未测速】🇺🇸_美国 (26) = vless,67.159.47.235,2053,51bbb0b2-dde1-426d-a0ba-9613a94a2bee,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
 【未测速】🇺🇸_美国 (27) = vless,67.159.46.130,2053,51bbb0b2-dde1-426d-a0ba-9613a94a2bee,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
 【未测速】🇦🇺_澳大利亚 = trojan,au.tronsg.com,443,Trojan@82164024,tls=true,sni=au.tronsg.com,udp-relay=true
-【未测速】PL【机场推荐：https://a9a.xyz】16 = vless,5.104.74.27,8443,688ece4d-84ee-4db7-bc61-85776df0a3b4,encryption=none,tls=true,sni=uk-room07.filesnap.tech,udp-relay=true
 【未测速】🇪🇸_西班牙 = vless,66.163.118.113,443,dbf3f074-3b18-43f3-b82a-debd8c879c69,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
 【未测速】🇩🇪_德国 = vless,159.200.230.2,443,b71ae017-e2f6-439f-a9a3-0b0af5f067c5,encryption=none,tls=true,sni=9e75c7t.de11.h1clayd.click,udp-relay=true
 【未测速】🇩🇪_德国 (2) = vless,50.7.156.125,443,bcba1350-17de-47e6-ac73-4af9b41f600c,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
@@ -116,53 +114,55 @@
 【未测速】🇩🇪_德国 (5) = vless,50.7.156.124,443,bcba1350-17de-47e6-ac73-4af9b41f600c,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
 【未测速】🇦🇺_澳大利亚 (2) = vless,50.6.54.163,443,dbf3f074-3b18-43f3-b82a-debd8c879c69,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
 【未测速】🇺🇸_美国 (32) = vless,67.159.47.238,2083,51bbb0b2-dde1-426d-a0ba-9613a94a2bee,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
-【未测速】CA【机场推荐：https://a9a.xyz】20 = vless,212.69.135.26,8443,e1b32562-91ba-404f-946e-d4c41293a67b,encryption=none,tls=true,sni=uk-room05.filesnap.tech,udp-relay=true
-【未测速】CA【机场推荐：https://a9a.xyz】21 = vless,212.69.135.29,8443,881784e4-f159-4822-96e9-12f48f439149,encryption=none,tls=true,sni=uk-room05.filesnap.tech,udp-relay=true
-【未测速】PL【机场推荐：https://a9a.xyz】18 = vless,5.104.74.26,8443,e1b32562-91ba-404f-946e-d4c41293a67b,encryption=none,tls=true,sni=uk-room07.filesnap.tech,udp-relay=true
-【未测速】CA【机场推荐：https://a9a.xyz】14 = vless,212.69.135.27,8443,b3ac565c-fe3a-4279-868c-43c41c05e358,encryption=none,tls=true,sni=uk-room05.filesnap.tech,udp-relay=true
-【未测速】PL【机场推荐：https://a9a.xyz】22 = vless,5.104.74.22,8443,72dd8678-1ac5-4357-9f7e-97e367e2a835,encryption=none,tls=true,sni=uk-room06.filesnap.tech,udp-relay=true
-【未测速】PL【机场推荐：https://a9a.xyz】24 = vless,5.104.74.69,8443,c6320c2e-15b3-4c3f-9d5a-d371828ea818,encryption=none,tls=true,sni=uk-room06.filesnap.tech,udp-relay=true
-【未测速】CA【机场推荐：https://a9a.xyz】19 = vless,212.69.135.28,8443,1f734181-97b2-479e-87f9-3dda35fc3685,encryption=none,tls=true,sni=uk-room05.filesnap.tech,udp-relay=true
-【未测速】🇹🇷_土耳其 (10) = vless,5.104.74.21,8443,73b518e9-c8aa-41f1-af51-b8baf24064cb,encryption=none,tls=true,sni=uk-room05.filesnap.tech,udp-relay=true
-【未测速】🇹🇷_土耳其 (11) = vless,5.104.74.124,8443,a2e6a96e-395f-4125-917c-77c52c059339,encryption=none,tls=true,sni=uk-room07.filesnap.tech,udp-relay=true
-【未测速】PL【机场推荐：https://a9a.xyz】17 = vless,5.104.74.117,8443,6d477a1e-40ec-4e27-940a-d398092e63af,encryption=none,tls=true,sni=uk-room05.filesnap.tech,udp-relay=true
-【未测速】PL【机场推荐：https://a9a.xyz】25 = vless,5.104.74.25,8443,c1f87d4d-3ea2-4378-925a-b4942e930a7d,encryption=none,tls=true,sni=uk-room07.filesnap.tech,udp-relay=true
-【未测速】PL【机场推荐：https://a9a.xyz】30 = vless,5.104.74.128,8443,62864307-d1a7-4d77-bee8-996ffae8e614,encryption=none,tls=true,sni=uk-room07.filesnap.tech,udp-relay=true
-【未测速】DE【机场推荐：https://a9a.xyz】32 = vless,176.100.37.154,443,3bb97d46-789b-4229-88f6-9beb222a4137,encryption=none,tls=true,sni=modx-au.bachidze.com,udp-relay=true
-【未测速】DE【机场推荐：https://a9a.xyz】23 = vless,2.26.251.236,443,c16e8cdb-65dd-4049-bc65-14c051b8a6c6,encryption=none,tls=true,sni=mental-deprivation.ru,udp-relay=true
+【未测速】🇺🇸_美国 (33) = vless,212.69.135.26,8443,e1b32562-91ba-404f-946e-d4c41293a67b,encryption=none,tls=true,sni=uk-room05.filesnap.tech,udp-relay=true
+【未测速】🇺🇸_美国 (35) = vless,212.69.135.29,8443,952150a2-4fd5-4e20-a6d5-eaaae6b575f8,encryption=none,tls=true,sni=uk-room05.filesnap.tech,udp-relay=true
+【未测速】🇹🇷_土耳其 (14) = vless,5.104.74.70,8443,e2cfbfd7-462b-40ca-bb17-d07f0265558d,encryption=none,tls=true,sni=uk-room07.filesnap.tech,udp-relay=true
+【未测速】🇹🇷_土耳其 (25) = vless,5.104.74.22,8443,72dd8678-1ac5-4357-9f7e-97e367e2a835,encryption=none,tls=true,sni=uk-room06.filesnap.tech,udp-relay=true
+【未测速】🇹🇷_土耳其 (17) = vless,5.104.74.69,8443,c6320c2e-15b3-4c3f-9d5a-d371828ea818,encryption=none,tls=true,sni=uk-room06.filesnap.tech,udp-relay=true
+【未测速】🇺🇸_美国 (38) = vless,212.69.135.28,8443,1f734181-97b2-479e-87f9-3dda35fc3685,encryption=none,tls=true,sni=uk-room05.filesnap.tech,udp-relay=true
+【未测速】PL【机场推荐：https://a9a.xyz】10 = vless,5.104.74.21,8443,73b518e9-c8aa-41f1-af51-b8baf24064cb,encryption=none,tls=true,sni=uk-room05.filesnap.tech,udp-relay=true
+【未测速】PL【机场推荐：https://a9a.xyz】11 = vless,5.104.74.124,8443,a2e6a96e-395f-4125-917c-77c52c059339,encryption=none,tls=true,sni=uk-room07.filesnap.tech,udp-relay=true
+【未测速】🇹🇷_土耳其 (12) = vless,5.104.74.117,8443,6d477a1e-40ec-4e27-940a-d398092e63af,encryption=none,tls=true,sni=uk-room05.filesnap.tech,udp-relay=true
+【未测速】🇹🇷_土耳其 (22) = vless,5.104.74.128,8443,62864307-d1a7-4d77-bee8-996ffae8e614,encryption=none,tls=true,sni=uk-room07.filesnap.tech,udp-relay=true
+【未测速】🇩🇪_德国 (6) = vless,176.100.37.154,443,3bb97d46-789b-4229-88f6-9beb222a4137,encryption=none,tls=true,sni=modx-au.bachidze.com,udp-relay=true
+【未测速】DE【机场推荐：https://a9a.xyz】13 = vless,2.26.251.236,443,c16e8cdb-65dd-4049-bc65-14c051b8a6c6,encryption=none,tls=true,sni=mental-deprivation.ru,udp-relay=true
 【未测速】🇫🇮_芬兰 = vless,fi.peregrine-sub.net,443,42a64b9a-ab79-4094-8656-30366a7c2ea3,encryption=none,tls=true,sni=fi.peregrine-sub.net,udp-relay=true
-【未测速】CH【机场推荐：https://a9a.xyz】26 = vless,prvtch.titun.su,443,90157e25-cee1-4217-921e-91f300bc1a24,encryption=none,tls=true,sni=perevodchiki.su,udp-relay=true
-【未测速】🇨🇭_瑞士 (4) = vless,179.43.166.190,443,90157e25-cee1-4217-921e-91f300bc1a24,encryption=none,tls=true,sni=perevodchiki.su,udp-relay=true
-【未测速】🇳🇱_荷兰 (8) = vless,185.246.155.91,10103,dbf3f074-3b18-43f3-b82a-debd8c879c69,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
-【未测速】CH【机场推荐：https://a9a.xyz】27 = vless,46.19.138.214,443,90157e25-cee1-4217-921e-91f300bc1a24,encryption=none,tls=true,sni=perevodchiki.su,udp-relay=true
-【未测速】RU【机场推荐：https://a9a.xyz】28 = vless,92.243.66.79,443,c5f59ef3-9540-49fa-bd1e-c6c2f79df49a,encryption=none,tls=true,sni=ru-mow.probe.geomyip.com,udp-relay=true
+【未测速】\U0001F1E8\U0001F1EDCH_3|2.5MB/s = vless,prvtch.titun.su,443,90157e25-cee1-4217-921e-91f300bc1a24,encryption=none,tls=true,sni=perevodchiki.su,udp-relay=true
+【未测速】\U0001F1E8\U0001F1EDCH_1|2.3MB/s = vless,179.43.166.190,443,90157e25-cee1-4217-921e-91f300bc1a24,encryption=none,tls=true,sni=perevodchiki.su,udp-relay=true
+【未测速】NL【机场推荐：https://a9a.xyz】12 = vless,185.246.155.91,10103,dbf3f074-3b18-43f3-b82a-debd8c879c69,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
+【未测速】\U0001F1E8\U0001F1EDCH_2|1.9MB/s = vless,46.19.138.214,443,90157e25-cee1-4217-921e-91f300bc1a24,encryption=none,tls=true,sni=perevodchiki.su,udp-relay=true
+【未测速】\U0001F1F7\U0001F1FARU_1|2.3MB/s = vless,92.243.66.79,443,c5f59ef3-9540-49fa-bd1e-c6c2f79df49a,encryption=none,tls=true,sni=ru-mow.probe.geomyip.com,udp-relay=true
 【未测速】🇭🇰_香港 (2) = trojan,sclass-00.catcat321.com,20123,d9064589-74af-432a-9390-5d8a9da281bf,tls=true,sni=hk.catxstar.com,udp-relay=true
 【未测速】🇩🇪_德国 (9) = vless,31.22.10.239,443,dbf3f074-3b18-43f3-b82a-debd8c879c69,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
 【未测速】🇩🇪_德国 (10) = vless,modx-au.bachidze.com,443,3bb97d46-789b-4229-88f6-9beb222a4137,encryption=none,tls=true,sni=modx-au.bachidze.com,udp-relay=true
 【未测速】🇫🇮_芬兰 (2) = vless,31.76.103.92,443,42a64b9a-ab79-4094-8656-30366a7c2ea3,encryption=none,tls=true,sni=fi.peregrine-sub.net,udp-relay=true
 【未测速】🇷🇺_俄罗斯 (3) = vless,72.56.38.83,443,Fluffy_VPN-zKZUa4Ie,encryption=none,tls=true,sni=absolute-disaster.org,udp-relay=true
-【未测速】🇩🇪_德国 (11) = vless,gembeforeshoping.space,443,50a87e21-f0e2-4b53-a787-91adfe748f63,encryption=none,tls=true,sni=gembeforeshoping.space,udp-relay=true
+【未测速】US【机场推荐：https://a9a.xyz】16 = vless,gembeforeshoping.space,443,50a87e21-f0e2-4b53-a787-91adfe748f63,encryption=none,tls=true,sni=gembeforeshoping.space,udp-relay=true
 【未测速】🇩🇪_德国 (12) = vless,31.56.18.191,443,7af8ad56-33ce-4f3d-ad15-ef32a71d67f7,encryption=none,tls=true,sni=last.syoknew.work,udp-relay=true
 【未测速】🇭🇰_香港 (3) = trojan,sclass-c1.catcat321.com,20086,d9064589-74af-432a-9390-5d8a9da281bf,tls=true,sni=hk.catxstar.com,udp-relay=true
 【未测速】🇫🇷_法国 (2) = vless,w.geogame.ir,2053,fbda2834-b1e7-4148-afb9-deda31036a30,encryption=none,tls=true,sni=w.geogame.ir,udp-relay=true
 【未测速】🇸🇬_新加坡 (4) = vless,103.172.116.191,10303,dbf3f074-3b18-43f3-b82a-debd8c879c69,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
-【未测速】SG【机场推荐：https://a9a.xyz】31 = vless,dddz-1-x.473221.xyz,34759,65ec84f5-0dd4-4582-8b4f-592e50b22116,encryption=none,tls=true,sni=v1-dy.ixigua.com,udp-relay=true
+【未测速】🇸🇬_新加坡 (5) = vless,dddz-1-x.473221.xyz,34759,65ec84f5-0dd4-4582-8b4f-592e50b22116,encryption=none,tls=true,sni=v1-dy.ixigua.com,udp-relay=true
 【未测速】🇮🇹_意大利 = vless,216.106.191.201,443,dbf3f074-3b18-43f3-b82a-debd8c879c69,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
 【未测速】🇮🇹_意大利 (2) = vless,216.106.191.201,10303,dbf3f074-3b18-43f3-b82a-debd8c879c69,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
 【未测速】🇸🇬_新加坡 (6) = vless,103.172.116.191,10103,dbf3f074-3b18-43f3-b82a-debd8c879c69,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
 【未测速】🇮🇷_伊朗 (2) = vless,tunell2027.crackerbinam.org,48312,f47057d5-120d-4b42-b6d6-30469aef6813,encryption=none,tls=true,sni=www.cloudflare.com,udp-relay=true
 【未测速】🇸🇬_新加坡 (7) = vless,103.172.116.191,10203,dbf3f074-3b18-43f3-b82a-debd8c879c69,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
-【未测速】RU【机场推荐：https://a9a.xyz】8 = ss,46.17.47.58,18443,aes-256-gcm,cCMJgJTA3BA489YUYrFq7XHXSiSpWlLa
-【未测速】JP【机场推荐：https://a9a.xyz】12 = ss,45.12.89.202,443,chacha20-ietf-poly1305,1f24d145bf7c877f7e3140b7918eb9cd804b1576a96596f9
-【未测速】NL【机场推荐：https://a9a.xyz】13 = ss,156.67.120.205,51628,chacha20-ietf-poly1305,29ZZXVa34x7sC48w9FKQ54UKHiJJGTVgKFppBRgviLrVCAYVVyKZdD3obbpjCyk31V5b2G2d7xzqmaPBFdcheCVB9UQ4ZghF
-【未测速】KZ【机场推荐：https://a9a.xyz】29 = vless,85.202.192.131,34033,2cb6a5d1-0165-4bc2-aff2-832672160c56,encryption=none,tls=true,sni=splitter.wb.ru,udp-relay=true
-【未测速】\U0001F1F2\U0001F1FDMX_1|3.8MB/s = vmess,38.60.224.173,32153,vmess,5cf1f470-3f70-4589-a2a4-4657ea3a1edf,udp-relay=true
-【未测速】\U0001F1F3\U0001F1F1NL_1|2.4MB/s = vless,uyt24-k2.miniseries.ir,49673,b86451af-4c98-4b7d-96e5-16f2e9df1d46,encryption=none,udp-relay=true
-【未测速】\U0001F1E9\U0001F1EADE_1|1.0MB/s = vless,n2.topingr.ir,443,d5748db0-0031-4b9e-b43c-6c3986a9b5ed,encryption=none,tls=true,sni=riga.zovip2.ir,ws=true,ws-path=/api/v3/pulse,ws-headers=host:riga.zovip2.ir,udp-relay=true
-【未测速】\U0001F1F3\U0001F1F1NL_10|4.0MB/s = vless,78.17.53.142,8443,6b566898-8416-4ac3-8b8f-66db059c462b,encryption=none,tls=true,sni=www.ru.nl,udp-relay=true
-【未测速】\U0001F1FA\U0001F1E6UA_1|2.4MB/s = vless,cf-cname.xingpingcn.top,443,30e52776-55ac-3cb4-8d36-e2910f07e2c3,encryption=none,tls=true,sni=b5cb4fa7s274.kuback.top,udp-relay=true
-【未测速】\U0001F1E9\U0001F1EADE_8|1.1MB/s = vless,cf.090227.xyz,443,30e52776-55ac-3cb4-8d36-e2910f07e2c3,encryption=none,tls=true,sni=6f01ee42s71.kuback.top,udp-relay=true
-【未测速】\U0001F1F9\U0001F1FCTW_1|2.0MB/s = vless,dddz-1-x.473221.xyz,13239,65ec84f5-0dd4-4582-8b4f-592e50b22116,encryption=none,tls=true,sni=updates.cdn-apple.com,udp-relay=true
+【未测速】PL【机场推荐：https://a9a.xyz】17 = vless,188.137.178.174,8443,99c5b713-dedf-4a10-8070-916ff3f49b0e,encryption=none,tls=true,sni=fs.qicai99.com,ws=true,ws-path=/,ws-headers=host:fs.qicai99.com,udp-relay=true
+【未测速】CA【机场推荐：https://a9a.xyz】18 = trojan,104.25.95.49,443,883e3cc8-9613-4f2d-8c42-0dd3d429db55,sni=ltf8.jueson.de5.net,ws=true,ws-path=/,ws-headers=host:ltf8.jueson.de5.net,udp-relay=true
+【未测速】\U0001F1F3\U0001F1F1NL_1|2.7MB/s = vless,89.105.195.152,443,1653818d-532e-46be-b825-384107fb7c3a,encryption=none,tls=true,sni=fetch.mediacorphub.org,udp-relay=true
+【未测速】\U0001F1F3\U0001F1F1NL_2|3.3MB/s = vless,stats.mediacorphub.org,443,1653818d-532e-46be-b825-384107fb7c3a,encryption=none,tls=true,sni=stats.mediacorphub.org,udp-relay=true
+【未测速】\U0001F1F3\U0001F1F1NL_3|1.2MB/s = vless,89.105.195.150,443,1653818d-532e-46be-b825-384107fb7c3a,encryption=none,tls=true,sni=images.mediacorphub.org,udp-relay=true
+【未测速】\U0001F1EB\U0001F1EEFI_1|1.3MB/s = vless,78.17.39.129,443,ead9f716-0131-4c16-a107-6b9b16090961,encryption=none,tls=true,sni=78.17.39.129,udp-relay=true
+【未测速】\U0001F1E9\U0001F1EADE_1|3.7MB/s = vless,fast.mo-chephosting.ir,20705,1e8edcb4-844f-43e1-9ce0-99d07038f17c,encryption=none,udp-relay=true
+【未测速】\U0001F1F3\U0001F1F1NL_4|2.9MB/s = vless,hub.mediacorphub.org,443,1653818d-532e-46be-b825-384107fb7c3a,encryption=none,tls=true,sni=hub.mediacorphub.org,udp-relay=true
+【未测速】\U0001F1F9\U0001F1F7TR_1|3.1MB/s = vless,45.92.219.47,443,ecc0e60a-f2cc-4266-8353-b228df89730a,encryption=none,tls=true,sni=ty.galactichub.online,udp-relay=true
+【未测速】\U0001F1E9\U0001F1EADE_2|3.1MB/s = vless,79.182.39.109,443,b7b8ee80-db83-4276-8c68-87dc88b0b0b5,encryption=none,tls=true,sni=71b840t.de7.h1clayd.click,udp-relay=true
+【未测速】\U0001F1E9\U0001F1EADE_13|2.7MB/s = vless,187.7.206.127,61374,f8d52ece-fad4-478d-875d-df6eed3befa7,encryption=none,tls=true,sni=fl-b2.golangwikito.cfd,udp-relay=true
+【未测速】\U0001F1F3\U0001F1F1NL_13|1.1MB/s = vless,79.182.39.108,443,b7b8ee80-db83-4276-8c68-87dc88b0b0b5,encryption=none,tls=true,sni=15d7fft.nl11.h1clayd.click,udp-relay=true
+【未测速】\U0001F1F3\U0001F1F1NL_14|3.1MB/s = vless,cf.090227.xyz,443,30e52776-55ac-3cb4-8d36-e2910f07e2c3,encryption=none,tls=true,sni=1ef92476s124.kuback.top,udp-relay=true
+【未测速】\U0001F1FA\U0001F1F8US_9|2.5MB/s = vless,212.103.62.233,443,a715374a-a745-4800-889b-0c864fad5ca0,encryption=none,tls=true,sni=www.apple.com,udp-relay=true
+【未测速】❓OtherT1_1|1.7MB/s = vless,191.44.112.170.sslip.io,443,46d221fa-e9b4-748c-4eae-019a88e42991,encryption=none,tls=true,sni=orbylume.my.to,ws=true,ws-path=/tvpn-tor/sc,ws-headers=host:orbylume.my.to,udp-relay=true
 【未测速】CA|Github搜索TrojanLinks = trojan,15.223.118.153,14826,2qmYr0p4X63t,tls=true,sni=appsvs.shop,udp-relay=true
 【未测速】CA|Github搜索TrojanLinks-2 = trojan,35.183.17.108,14807,v1eV4PsyDTXI,tls=true,sni=appsvs.shop,udp-relay=true
 【未测速】CA|Github搜索TrojanLinks-3 = trojan,3.96.211.215,14787,HxQUta02eVg8,tls=true,sni=appsvs.shop,udp-relay=true
