@@ -3,6 +3,7 @@
 // 凭证来源：quark_cookie_qx.js 抓取并存入 $prefs（kps / sign / vcode）
 // 接口依据：Liu8Can/Quark_Auto_Check_In 与 BNDou/Auto_Check_In 双源核实（2026-10-06）
 // 改编自 Loon 版 quark_checkin.js：$persistentStore → $prefs，$notification → $notify
+// 修正（2026-11-14）：QX 的 task 里没有 $httpClient，改用 $task.fetch
 
 const kps = $prefs.valueForKey('quark_kps');
 const sign = $prefs.valueForKey('quark_sign');
@@ -28,43 +29,50 @@ if (!kps || !sign || !vcode) {
     + '&vcode=' + encodeURIComponent(vcode);
   const base = 'https://drive-m.quark.cn/1/clouddrive/capacity/growth';
 
-  $httpClient.get(base + '/info?' + query, (error, response, data) => {
-    if (error) {
-      notify('请求失败 ⚠️', String(error));
-      return $done();
-    }
-    let info = null;
-    try { info = JSON.parse(data); } catch (e) { /* 非 JSON 响应 */ }
-    const capSign = info && info.data && info.data.cap_sign;
+  $task.fetch({ url: base + '/info?' + query, method: 'GET' }).then(
+    (resp) => {
+      const data = resp.body || '';
+      let info = null;
+      try { info = JSON.parse(data); } catch (e) { /* 非 JSON 响应 */ }
+      const capSign = info && info.data && info.data.cap_sign;
 
-    if (!capSign) {
-      notify('凭证可能失效 ⚠️', (info && info.message) || '请重新打开夸克签到页抓取');
-      return $done();
-    }
-
-    if (capSign.sign_daily) {
-      const total = info.data.cap_composition ? info.data.cap_composition.sign_reward : 0;
-      notify('今日已签到 ✅', '累计签到奖励 ' + fmtSize(total));
-      return $done();
-    }
-
-    $httpClient.post({
-      url: base + '/sign?' + query,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ sign_cyclic: true })
-    }, (error2, response2, data2) => {
-      if (error2) {
-        notify('签到请求失败 ⚠️', String(error2));
+      if (!capSign) {
+        notify('凭证可能失效 ⚠️', (info && info.message) || '请重新打开夸克签到页抓取');
         return $done();
       }
-      let result = null;
-      try { result = JSON.parse(data2); } catch (e) { /* 非 JSON 响应 */ }
-      if (result && result.data && typeof result.data.sign_daily_reward !== 'undefined') {
-        notify('签到成功 ✅', '本次获得 ' + fmtSize(result.data.sign_daily_reward));
-      } else {
-        notify('签到失败 ⚠️', (result && result.message) || '未知错误');
+
+      if (capSign.sign_daily) {
+        const total = info.data.cap_composition ? info.data.cap_composition.sign_reward : 0;
+        notify('今日已签到 ✅', '累计签到奖励 ' + fmtSize(total));
+        return $done();
       }
+
+      return $task.fetch({
+        url: base + '/sign?' + query,
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sign_cyclic: true })
+      }).then(
+        (resp2) => {
+          const data2 = resp2.body || '';
+          let result = null;
+          try { result = JSON.parse(data2); } catch (e) { /* 非 JSON 响应 */ }
+          if (result && result.data && typeof result.data.sign_daily_reward !== 'undefined') {
+            notify('签到成功 ✅', '本次获得 ' + fmtSize(result.data.sign_daily_reward));
+          } else {
+            notify('签到失败 ⚠️', (result && result.message) || '未知错误');
+          }
+          $done();
+        },
+        (err2) => {
+          notify('签到请求失败 ⚠️', String(err2));
+          $done();
+        }
+      );
+    },
+    (err) => {
+      notify('请求失败 ⚠️', String(err));
       $done();
-    });
-  });
+    }
+  );
 }
