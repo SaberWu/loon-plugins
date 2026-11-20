@@ -1,100 +1,129 @@
 /**
- * DNSForge / AdGuard Home 签到脚本 for Quantumult X
- * 账号密码只存在手机本地（QX $prefs），不写进脚本文件、不上传。
+ * DNSForge 签到脚本 for Quantumult X v2
+ * 真实接口（从官网前端 JS 核实，2026-11-20）：
+ *   POST /api/v1/auth/login     账号密码登录，返回 { tokens: { access_token, refresh_token } }
+ *   GET  /api/v1/me/checkin     查签到状态（checked_today / streak / total_days）
+ *   POST /api/v1/me/checkin     签到（无 body，Bearer 认证）
+ *   POST /api/v1/auth/refresh   401 时用 refresh_token 换新 Token
+ * 验证码已确认关闭（/api/v1/public/config：captcha.enabled=false，全场景关闭），
+ * 脚本登录不需要验证码。
+ * 账号密码与 Token 只存在手机本地（QX $prefs），不写进脚本文件、不上传。
  * 首次使用：先跑一次 dnsforge_setup.js（见附件，另发你），把账号密码写入本地存储。
- * 注意：下面 4 个签到端点是推测的（原作者未给出真实接口），AdGuard Home 官方
- * 并没有 checkin 接口；脚本会按顺序逐个尝试，哪个返回 2xx 就用哪个并通知你。
- * 如果 4 个全失败（常见是 404），说明端点猜错了，需要拿到真实签到接口地址再改。
  */
 
 const $ = new Env("DNSForge 签到");
 
-// QX 的 JS 环境不一定自带 btoa，没有就用下面这个顶上（必须放在签到逻辑之前）
-if (typeof btoa === "undefined") {
-    var btoa = function (str) {
-        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-        let out = "";
-        for (let i = 0; i < str.length; i += 3) {
-            const a = str.charCodeAt(i);
-            const b = str.charCodeAt(i + 1);
-            const c = str.charCodeAt(i + 2);
-            const n = (a << 16) | ((b || 0) << 8) | (c || 0);
-            out += chars[(n >> 18) & 63] + chars[(n >> 12) & 63] + (isNaN(b) ? "=" : chars[(n >> 6) & 63]) + (isNaN(c) ? "=" : chars[n & 63]);
-        }
-        return out;
-    };
-}
-
 // ================= 用户配置区 =================
 const config = {
-    host: "https://adguardhome.lv10.ren",
+    api: "https://adguardhome.lv10.ren/api/v1",
     username: $prefs.valueForKey("dnsforge_username") || "",
     password: $prefs.valueForKey("dnsforge_password") || "",
-    // 推测的签到端点列表，按顺序尝试，遇到 2xx 即视为成功
-    endpoints: [
-        "/control/checkin",
-        "/control/check_in",
-        "/api/v1/user/checkin",
-        "/checkin"
-    ]
 };
 // =============================================
+
+// ---------- Token 存取（只存手机本地） ----------
+function getAccess() { return $prefs.valueForKey("dnsforge_access_token") || ""; }
+function getRefresh() { return $prefs.valueForKey("dnsforge_refresh_token") || ""; }
+function saveTokens(t) {
+    if (!t) return;
+    if (t.access_token) $prefs.setValueForKey(t.access_token, "dnsforge_access_token");
+    if (t.refresh_token) $prefs.setValueForKey(t.refresh_token, "dnsforge_refresh_token");
+}
+function clearTokens() {
+    $prefs.removeValueForKey("dnsforge_access_token");
+    $prefs.removeValueForKey("dnsforge_refresh_token");
+}
+
+// ---------- 登录：POST /auth/login ----------
+async function login() {
+    const resp = await $.fetch(config.api + "/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: config.username, password: config.password, agree_terms: true })
+    });
+    const data = parseBody(resp);
+    if (resp.statusCode >= 200 && resp.statusCode < 300 && data && data.tokens) {
+        saveTokens(data.tokens);
+        return data.tokens.access_token;
+    }
+    throw new Error("登录失败：" + errMsg(resp, data));
+}
+
+// ---------- 刷新 Token：POST /auth/refresh ----------
+async function refresh() {
+    const rt = getRefresh();
+    if (!rt) throw new Error("没有 refresh_token");
+    const resp = await $.fetch(config.api + "/auth/refresh", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ refresh_token: rt })
+    });
+    const data = parseBody(resp);
+    if (resp.statusCode >= 200 && resp.statusCode < 300 && data && data.tokens) {
+        saveTokens(data.tokens);
+        return data.tokens.access_token;
+    }
+    throw new Error("刷新 Token 失败：" + errMsg(resp, data));
+}
+
+// ---------- 带 Bearer 的请求，401 自动刷新/重登一次 ----------
+async function api(path, method, retried) {
+    let token = getAccess();
+    if (!token) token = await login();
+    let resp = await $.fetch(config.api + path, {
+        method: method,
+        headers: { "Authorization": "Bearer " + token, "Content-Type": "application/json" }
+    });
+    if (resp.statusCode === 401 && !retried) {
+        try { token = await refresh(); }
+        catch (e) { clearTokens(); token = await login(); }
+        resp = await $.fetch(config.api + path, {
+            method: method,
+            headers: { "Authorization": "Bearer " + token, "Content-Type": "application/json" }
+        });
+    }
+    return resp;
+}
+
+function parseBody(resp) {
+    try { return JSON.parse(resp.body || ""); } catch (e) { return null; }
+}
+function errMsg(resp, data) {
+    if (data && data.error && data.error.message) return data.error.message;
+    if (data && data.message) return data.message;
+    return "HTTP " + resp.statusCode;
+}
 
 !(async () => {
     if (!config.username || !config.password) {
         $.msg($.name, "❌ 未配置账号", "请先运行 dnsforge_setup.js 写入账号密码（只存手机本地）");
         return $.done();
     }
-
-    const authHeader = "Basic " + btoa(config.username + ":" + config.password);
-    let success = false;
-    let lastError = "";
-
-    for (const path of config.endpoints) {
-        const url = config.host + path;
-        $.log(`🔎 尝试请求: ${url}`);
-        try {
-            const response = await $.fetch(url, {
-                method: "POST", // 签到通常是 POST，少数可能是 GET
-                headers: {
-                    "Authorization": authHeader,
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({}) // 部分接口需要空 body
-            });
-
-            // QX 的 $task.fetch 返回 { statusCode, headers, body }，没有 .status / .text()
-            const status = response.statusCode;
-            const body = response.body || "";
-
-            $.log(`📡 响应 [${status}]: ${body.substring(0, 200)}`);
-
-            if (status >= 200 && status < 300) {
-                // 尝试解析 JSON，提取可能的消息
-                let msg = "签到成功";
-                try {
-                    const data = JSON.parse(body);
-                    msg = data.message || data.msg || data.result || "签到成功";
-                } catch (e) { /* 非 JSON 响应，忽略 */ }
-                $.msg($.name, "✅ 签到成功", `端点: ${path}\n${msg}`);
-                success = true;
-                break; // 成功一个就不再尝试后续端点
-            } else if (status === 401) {
-                lastError = "认证失败，请检查用户名和密码";
-                break; // 认证失败就没必要试其他端点了
-            } else {
-                lastError = `HTTP ${status}`;
-            }
-        } catch (e) {
-            lastError = e.message || "网络请求异常";
-            $.log(`⚠️ 请求 ${path} 异常: ${lastError}`);
+    try {
+        // 1. 先查状态：GET /me/checkin
+        const stResp = await api("/me/checkin", "GET", false);
+        const st = parseBody(stResp);
+        if (stResp.statusCode !== 200 || !st) {
+            $.msg($.name, "❌ 查询状态失败", errMsg(stResp, st));
+            return $.done();
         }
+        if (st.checked_today) {
+            $.msg($.name, "✅ 今日已签到", `连续签到 ${st.streak || 0} 天，累计 ${st.total_days || 0} 天`);
+            return $.done();
+        }
+        // 2. 未签到：POST /me/checkin
+        const ckResp = await api("/me/checkin", "POST", false);
+        const ck = parseBody(ckResp);
+        if (ckResp.statusCode >= 200 && ckResp.statusCode < 300 && ck) {
+            const title = ck.granted > 0 ? `签到成功，+${ck.granted} 天会员` : "签到成功";
+            const sub = ck.bonus > 0 ? (ck.bonus_message || "有额外奖励") : `已连续签到 ${ck.streak || 0} 天`;
+            $.msg($.name, "✅ " + title, sub);
+        } else {
+            $.msg($.name, "❌ 签到失败", errMsg(ckResp, ck));
+        }
+    } catch (e) {
+        $.msg($.name, "❌ 签到异常", e.message || "网络请求异常");
     }
-
-    if (!success) {
-        $.msg($.name, "❌ 签到失败", `所有端点均未成功。\n最后错误: ${lastError}`);
-    }
-
     $.done();
 })();
 
